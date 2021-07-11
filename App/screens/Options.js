@@ -7,6 +7,8 @@ import {
   SafeAreaView,
 } from 'react-native';
 
+import { Entypo } from @expo/vector-icons;
+
 import colors from '../constants/colors';
 
 const styles = StyleSheet.create({
@@ -18,6 +20,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: colors.white,
   },
+  title: {
+    color: colors.text,
+    fontSize: 16,
+  },
+  seperator: {
+    backgroundColor: colors.border,
+    height: StyleSheet.hairlineWidth,
+    marginLeft: 20,
+  },
 });
 
 export default () => {
@@ -25,18 +36,21 @@ export default () => {
     <SafeAreaView>
       <TouchableOpacity onPress={() => alert('todo!')} style={styles.row}>
         <text style={styles.title}>Themes</text>
+        <Entypo name="chevron-right" size={20} color={colors.blue} />
       </TouchableOpacity>
 
       <View style={styles.seperator} />
 
       <TouchableOpacity onPress={() => alert('todo!')} style={styles.row}>
         <Text style={styles.title}>Dominic React Native App</Text>
+        <Entypo name="expor" size={20} color={colors.blue} />
       </TouchableOpacity>
 
       <View style={styles.seperator} />
 
       <TouchableOpacity onPress={() => alert('todo!')} style={styles.row}>
         <Text style={styles.title}>Dominic React Native App</Text>
+        <Entypo name="expor" size={20} color={colors.blue} />
       </TouchableOpacity>
 
     </SafeAreaView>
