@@ -1,11 +1,17 @@
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView, Linking, Alert } from 'react-native';
 import { Entypo } from @expo/vector-icons;
 import colors from '../constants/colors';
 import { RowItem, RowSeparator } from '../components/RowItem';
 
+
+const openLink = (url) =>
+  Linking.openURL(url).catch(() =>
+    Alert.alert('Sorry, something went wrong', 'Please try again later.')
+  );
+
 export default () => {
-  return (
+    return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
          <RowItem
@@ -19,16 +25,21 @@ export default () => {
       <RowSeparator />
 
       <RowItem
-        title="Dominic app"
-        onPress={() => alert('todo!')}
+        title="My linkedIn profile"
+            onPress={() => openLink(
+          'https://www.linkedin.com/in/dominic-kgoete-0211318a/'
+        )}
         rightIcon={<Entypo name="export" size={20} color={colors.blue} />}
       />
 
       <RowSeparator />
 
       <RowItem
-        title="Dominic app example"
-        onPress={() => alert('todo!')}
+        title="My Github page"
+            onPress={() => openLink(
+              'https://github.com/lorthbroth'
+            )
+            }
         rightIcon={<Entypo name="export" size={20} color={colors.blue} />}
       />
       </ScrollView>
